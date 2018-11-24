@@ -1,4 +1,4 @@
-package LinkList;
+package LinkList.FirstLink;
 
 public class Link {
     public int iData;               //Данные (ключ)

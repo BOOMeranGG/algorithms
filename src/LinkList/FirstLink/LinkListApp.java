@@ -1,4 +1,4 @@
-package LinkList;
+package LinkList.FirstLink;
 
 public class LinkListApp {
     public static void main(String[] args) {

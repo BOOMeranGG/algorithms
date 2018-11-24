@@ -1,4 +1,4 @@
-package LinkList;
+package LinkList.FirstLink;
 
 /**
  * Одна из реализаций односвязного списка(способ, кстати, мне не нравится)
@@ -22,7 +22,7 @@ public class LinkList {
 
     public Link deleteFirst() {                     //Удаление первого элемента
         Link temp = first;
-        first = temp.next;
+        first = first.next;
         return temp;
     }
 
