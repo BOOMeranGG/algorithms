@@ -1,8 +1,7 @@
 package LinkList.FirstLink;
 
-
 /**
- * Одна из реализаций односвязного списка(способ, кстати, мне не нравится)
+ * Одна из реализаций односвязного списка
  */
 public class LinkList {
     private Link first;

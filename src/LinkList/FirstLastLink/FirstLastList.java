@@ -33,11 +33,12 @@ public class FirstLastList {
         last = newLink;
     }
 
-    public void deleteFirst() {                     //Удаление первого элемента
-        Link temp = first;
+    public long deleteFirst() {                     //Удаление первого элемента(предполагается, что список не пуст)
+        long temp = first.dData;
         if (first.next == null)                     //Если только один элемент
             last = null;
         first = first.next;
+        return temp;
     }
 
     public void displayList() {
@@ -49,5 +50,4 @@ public class FirstLastList {
         }
         System.out.println();
     }
-
 }
