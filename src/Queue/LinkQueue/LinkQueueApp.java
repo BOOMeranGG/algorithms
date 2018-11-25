@@ -1,5 +1,8 @@
 package Queue.LinkQueue;
 
+/**
+ * Очередь на базе списка
+ */
 public class LinkQueueApp {
     public static void main(String[] args) {
         LinkQueue queue = new LinkQueue();

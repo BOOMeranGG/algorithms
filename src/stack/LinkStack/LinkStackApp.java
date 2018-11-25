@@ -1,5 +1,8 @@
 package stack.LinkStack;
 
+/**
+ * Стек на базе списка
+ */
 public class LinkStackApp {
     public static void main(String[] args) {
         LinkStack stack = new LinkStack();
