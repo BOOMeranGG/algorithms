@@ -30,14 +30,12 @@ public class Anagram {
     }
 
     public static void rotate(int newSize) {                   //Сдвиг всех букв влево, первая буква в конец
-        int i;
         int position = size - newSize;
         char temp = arrChar[position];
-        for (i = position + 1; i < size; i++) {
+        for (int i = position + 1; i < size; i++) {
             arrChar[i - 1] = arrChar[i];
         }
-        //arrChar[size - 1] = temp;
-        arrChar[i - 1] = temp;
+        arrChar[size - 1] = temp;
     }
 
     public static void displayWord() {
