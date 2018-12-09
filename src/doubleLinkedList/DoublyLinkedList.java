@@ -1,4 +1,4 @@
-package DoubleLinkedList;
+package doubleLinkedList;
 
 public class DoublyLinkedList {
     private Link first;

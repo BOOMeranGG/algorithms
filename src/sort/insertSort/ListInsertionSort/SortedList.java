@@ -1,4 +1,4 @@
-package insertSort.ListInsertionSort;
+package sort.insertSort.ListInsertionSort;
 
 /**
  * Сортировка методом вставки с помощью сортированного списка

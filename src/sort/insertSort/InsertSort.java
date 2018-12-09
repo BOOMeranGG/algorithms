@@ -1,4 +1,4 @@
-package insertSort;
+package sort.insertSort;
 
 public class InsertSort {
     static int[] num = {1, -6, 23, -25, 44, 123, 1290, -456, 0};

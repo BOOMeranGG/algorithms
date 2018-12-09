@@ -1,4 +1,4 @@
-package insertSort.ListInsertionSort;
+package sort.insertSort.ListInsertionSort;
 
 public class ListInsertionSortApp {
     public static void main(String[] args) {

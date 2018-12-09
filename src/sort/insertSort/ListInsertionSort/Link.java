@@ -1,4 +1,4 @@
-package insertSort.ListInsertionSort;
+package sort.insertSort.ListInsertionSort;
 
 public class Link {
     public long dData;
