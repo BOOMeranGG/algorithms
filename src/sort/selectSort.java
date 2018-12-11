@@ -1,4 +1,4 @@
-package sort.selectSort;
+package sort;
 
 public class selectSort {
     static int[] num = {1, -6, 23, -25, 44, 123, 1290, -456, 0};
