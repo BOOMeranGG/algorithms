@@ -28,12 +28,12 @@ public class RecQuickSort {
             return ;
         int pivot = mas[right];                                  //Крайний правый элемент, как опорный
 
-        int partition = partirion(left, right, pivot);           //Разбиение диапазона
+        int partition = partition(left, right, pivot);           //Разбиение диапазона
         quickSort(left, partition - 1);                    //Сортировка левой части
         quickSort(partition + 1, right);                    //Сортировка правой части
     }
 
-    public int partirion(int left, int right, int pivot) {
+    public int partition(int left, int right, int pivot) {
         int leftPtr = left - 1;                                 //Левая граница(после++)
         int rightPtr = right;                                   //Правая граница - 1(после --)
 

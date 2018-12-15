@@ -23,14 +23,14 @@ public class Partition {
 
         int pivot = 50;                                 //Опорное значение
 
-        int posBetween = partirion(0, mas.length - 1, pivot);
+        int posBetween = partition(0, mas.length - 1, pivot);
         System.out.println("Опорный элемент = " + pivot + " , разбиение между индексом " + posBetween);
         for (int i = 0; i < n; i++) {
             System.out.print(mas[i] + " ");
         }
     }
 
-    public int partirion(int left, int right, int pivot) {
+    public int partition(int left, int right, int pivot) {
         int leftPtr = left - 1;
         int rightPtr = right + 1;
 
