@@ -17,10 +17,7 @@ public class RecQuickSort {
             System.out.print(mas[i] + " ");
         }
         System.out.println();
-        //long t1 = System.currentTimeMillis();
         quickSort(0, mas.length - 1);
-//        long t2 = System.currentTimeMillis();
-//        System.out.println("Time =  " + (t2 - t1) + " ms.");
         for (int i = 0; i < n; i++) {
             System.out.print(mas[i] + " ");
         }
@@ -34,7 +31,6 @@ public class RecQuickSort {
         int partition = partirion(left, right, pivot);           //Разбиение диапазона
         quickSort(left, partition - 1);                    //Сортировка левой части
         quickSort(partition + 1, right);                    //Сортировка правой части
-
     }
 
     public int partirion(int left, int right, int pivot) {
