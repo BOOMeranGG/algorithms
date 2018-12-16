@@ -1,5 +1,9 @@
 package sort;
 
+/**
+ * Реализация быстрой сортировки. В качестве опорного
+ * элемента берётся последний элемент массива.
+ */
 public class RecQuickSort {
     int[] mas;
 
@@ -8,7 +12,7 @@ public class RecQuickSort {
         sort.start();
     }
 
-    public void start() {
+    private void start() {
         int n = 10000;
         mas = new int[n];
 
@@ -23,7 +27,7 @@ public class RecQuickSort {
         }
     }
 
-    public void quickSort(int left, int right) {
+    private void quickSort(int left, int right) {
         if (right - left <= 0)
             return ;
         int pivot = mas[right];                                  //Крайний правый элемент, как опорный
@@ -33,7 +37,7 @@ public class RecQuickSort {
         quickSort(partition + 1, right);                    //Сортировка правой части
     }
 
-    public int partition(int left, int right, int pivot) {
+    private int partition(int left, int right, int pivot) {
         int leftPtr = left - 1;                                 //Левая граница(после++)
         int rightPtr = right;                                   //Правая граница - 1(после --)
 
@@ -51,7 +55,7 @@ public class RecQuickSort {
         return leftPtr;                                         //Возврат позиции опорного элемента
     }
 
-    public void swap(int i, int j) {
+    private void swap(int i, int j) {
         int temp = mas[i];
         mas[i] = mas[j];
         mas[j] = temp;
