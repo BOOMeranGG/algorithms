@@ -45,5 +45,4 @@ public class ShellSort {
             h = (h - 1) / 3;
         }
     }
-
 }
