@@ -23,20 +23,25 @@ public class RedBlackTree {
     public void insert(int key) {
         Node newNode = new Node();
         newNode.data = key;
+        int count = 0;
         if (root == null) {
             root = newNode;
             root.isRed = false;
         } else {
             Node current = root;
-            Node parent;
+            Node parent = current;
+            Node grandPa = null;
             while (true) {
-                parent = current;
                 if (ifNeededThenChangeColor(current)) {               //Вызываем метод для проверки, надо ли менять цвет
-                    if (isRulesBroken(current)) {                     //Если из-за смена цветов было нарушено правило
-                        System.out.println("YEP!");
-                        //rightTurn(current);
-                    }
                 }
+                if (grandPa != null && isRulesBroken(parent)) {                      //Если из-за смена цветов было нарушено правило
+                    System.out.println("YEP!");
+                    rightTurn(grandPa);              //Временно только правый поворот
+                }
+                count++;
+                if (count > 1)
+                    grandPa = parent;
+                parent = current;
 
                 if (key < current.data) {
                     current = current.leftChild;
@@ -77,14 +82,13 @@ public class RedBlackTree {
     /**
      * Метод проверяет, нарушено ли правило для узла
      * и его потомков: если узел красный, то его потомки
-     * должны быть чёрными. Т.к. метод вызывается только
-     * после смены цветов, гарантируется, что переданный узел
-     * имеет двух потомков.
+     * должны быть чёрными.
      * @param current   - Передаётся узел родителя.
      * @return          - Возвращает true, если правило нарушено.
      */
     private boolean isRulesBroken(Node current) {
-        if (current.isRed && (current.leftChild.isRed || current.rightChild.isRed))
+        if (current.isRed && current.leftChild != null && current.rightChild != null
+                            && (current.leftChild.isRed || current.rightChild.isRed))
             return true;
         return false;
     }
@@ -97,11 +101,8 @@ public class RedBlackTree {
 
         if (left.rightChild != null)                        //Если существует, запоминаем переходящий узел
             passing = left.rightChild;
-        topNode = left;
-        topNode.rightChild = top;
-        topNode.rightChild.rightChild = right;
-        if (passing != null)
-            topNode.rightChild.leftChild = passing;
+
+
     }
 
     private void leftTurn(Node topNode) {
