@@ -31,14 +31,17 @@ public class RedBlackTree {
             Node current = root;
             Node parent = current;
             Node grandPa = null;
+            Node grandGrandPa = null;
             while (true) {
                 if (ifNeededThenChangeColor(current)) {               //Вызываем метод для проверки, надо ли менять цвет
                 }
                 if (grandPa != null && isRulesBroken(parent)) {                      //Если из-за смена цветов было нарушено правило
                     System.out.println("YEP!");
-                    rightTurn(grandPa);              //Временно только правый поворот
+                    rightTurn(grandPa, grandGrandPa);              //Временно только правый поворот
                 }
                 count++;
+                if (count > 2)
+                    grandGrandPa = grandPa;
                 if (count > 1)
                     grandPa = parent;
                 parent = current;
@@ -93,16 +96,25 @@ public class RedBlackTree {
         return false;
     }
 
-    private void rightTurn(Node topNode) {
-        Node top = topNode;
-        Node left = topNode.leftChild;
-        Node right = topNode.rightChild;
+    private void rightTurn(Node grandPa, Node grandGrandPa) {
+        boolean isRoot = false;
+        if (grandGrandPa == null)
+            isRoot = true;
+        Node main = grandPa;
+        Node top = grandPa.leftChild;
+        Node left = grandPa.leftChild;
+        Node right = grandPa.rightChild;
         Node passing = null;
 
         if (left.rightChild != null)                        //Если существует, запоминаем переходящий узел
             passing = left.rightChild;
+        if (isRoot) {                                       //Тут магия, пока не разберёшься, НЕ ТРОЖЬ!!!!
+            root = left;
+            main.leftChild = passing;
+            left.rightChild = main;
+        } else {
 
-
+        }
     }
 
     private void leftTurn(Node topNode) {
