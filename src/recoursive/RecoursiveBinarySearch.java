@@ -31,7 +31,7 @@ public class RecoursiveBinarySearch {
     }
 
     public int recBinarySearch(int key, int lower, int upper) {
-        int currentIn = (lower + upper) / 2;
+        int currentIn = (lower + upper) / 2;                                //Сломается при больших размерах массива
         if (mas[currentIn] == key)
             return currentIn;
         else if (lower > upper)                                             //Элемент не найден
